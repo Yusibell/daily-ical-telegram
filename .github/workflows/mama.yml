@@ -1,0 +1,28 @@
+name: Daily Rental Check-in/Check-out Notifications
+
+on:
+  schedule:
+    # Runs at 11:00 AM UTC every day
+    - cron: '0 11 * * *'
+  workflow_dispatch:  # Allows manual (on-demand) triggering of the workflow
+
+jobs:
+  send_notifications:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out repository code
+        uses: actions/checkout@v2
+
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.9'
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install requests icalendar
+
+      - name: Run notification script
+        run: python mama.py
