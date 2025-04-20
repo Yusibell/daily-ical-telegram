@@ -2,10 +2,8 @@ name: Daily Rental Check-in/Check-out Notifications
 
 on:
   schedule:
-    # Runs at 11:00 AM UTC every day
-    # Adjust the time zone if needed (e.g., '0 9 * * *' for 9:00 AM UTC)
-    - cron: '0 11 * * *'
-  workflow_dispatch:  # Allows manual triggering of the workflow
+    - cron: '0 * * * *'  # runs every hour at 00 minutes (e.g., 01:00, 02:00, etc.)
+  workflow_dispatch:  # optional: lets you trigger manually
 
 jobs:
   send_notifications:
