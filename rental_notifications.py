@@ -36,7 +36,7 @@ calendars = [
     {
         "property_name": "Ocean",
         "platform": "Booking",
-        "url": "https://ical.booking.com/v1/export?t=5d605208-257d-45db-8fe3-faac70fe2be3",
+        "url": "https://ical.booking.com/v1/export?t=6a8b0f3a-53fb-4c79-8ffd-afe54dd23651",
     },
 ]
 
